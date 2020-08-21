@@ -3,15 +3,15 @@
 const styles = [
   {
     type: 'href',
-    body: '\\css\\normalize.css',
+    body: 'D:\\css\\normalize.css',
   },
   {
     type: 'href',
-    body: '\\css\\webflow.css',
+    body: 'D:\\css\\webflow.css',
   },
   {
     type: 'href',
-    body: '\\css\\horizontal-scroll-demo-clone.webflow.css',
+    body: 'D:\\css\\horizontal-scroll-demo-clone.webflow.css',
   },
 ]
 
