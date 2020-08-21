@@ -47,7 +47,7 @@ class IndexView extends React.Component {
 
   render() {
     const proxies = Controller !== IndexView ? transformProxies(this.props.children) : {
-      'scrollable': [],
+
     }
 
     return (
@@ -73,7 +73,7 @@ class IndexView extends React.Component {
                 <h1 className="af-class-the-sticky-div-title">Sticky section<br />‍<span className="af-class-text-span-2">With horizontal scrolling</span></h1>
                 <div data-w-id="fc76b0fe-bba3-ae05-aa44-5c533e23a455" className="af-class-night-sky-fixed-background" />
                 <div className="af-class-the-overflow-hidden-mask">
-                  {map(proxies['scrollable'], props => <div data-w-id="9c0e3bb9-070a-4584-1466-9f7fca476da2" {...{...props, className: `af-class-the-width-400vh-scrollable-div ${props.className || ''}`}}>{props.children ? props.children : <React.Fragment>
+                  <div data-w-id="9c0e3bb9-070a-4584-1466-9f7fca476da2" className="af-class-the-width-400vh-scrollable-div">
                     <div className="af-class-the-content">
                       <div className="af-class-a-block">
                         <div className="af-class-gradient" />
@@ -115,7 +115,7 @@ class IndexView extends React.Component {
                         <div className="af-class-gradient" />
                       </div>
                     </div>
-                  </React.Fragment>}</div>)}
+                  </div>
                 </div>
               </div>
             </div>
