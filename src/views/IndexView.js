@@ -3,10 +3,10 @@
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
 
-const scripts = [
-  fetch("https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5efa3799cd0be118fdb1b23c").then(body => body.text()),
-  fetch("js/webflow.js").then(body => body.text()),
-]
+// const scripts = [
+//   fetch("https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5efa3799cd0be118fdb1b23c").then(body => body.text()),
+//   fetch("js/webflow.js").then(body => body.text()),
+// ]
 
 let Controller
 
@@ -15,7 +15,7 @@ class IndexView extends React.Component {
     if (Controller) return Controller
 
     try {
-      Controller = require('..\controllers/IndexController')
+      Controller = require('../controllers/IndexController')
       Controller = Controller.default || Controller
 
       return Controller
@@ -31,19 +31,19 @@ class IndexView extends React.Component {
     }
   }
 
-  componentDidMount() {
-    scripts.concat(Promise.resolve()).reduce((loaded, loading) => {
-      return loaded.then((script) => {
-        new Function(`
-          with (this) {
-            eval(arguments[0])
-          }
-        `).call(window, script)
+  // componentDidMount() {
+  //   scripts.concat(Promise.resolve()).reduce((loaded, loading) => {
+  //     return loaded.then((script) => {
+  //       new Function(`
+  //         with (this) {
+  //           eval(arguments[0])
+  //         }
+  //       `).call(window, script)
 
-        return loading
-      })
-    })
-  }
+  //       return loading
+  //     })
+  //   })
+  // }
 
   render() {
     const proxies = Controller !== IndexView ? transformProxies(this.props.children) : {
@@ -52,11 +52,6 @@ class IndexView extends React.Component {
 
     return (
       <span>
-        <style dangerouslySetInnerHTML={{ __html: `
-          @import url(D:\\css\\normalize.css);
-          @import url(D:\\css\\webflow.css);
-          @import url(D:\\css\\horizontal-scroll-demo-clone.webflow.css);
-        ` }} />
         <span className="af-view">
           <div>
             <div id="sec01" className="af-class-the-hero-section af-class-limited">
