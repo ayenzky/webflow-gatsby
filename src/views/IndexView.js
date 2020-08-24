@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
+import B from '../images/Asset-120.svg'
 
 // const scripts = [
 //   fetch("https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5efa3799cd0be118fdb1b23c").then(body => body.text()),
@@ -49,6 +50,7 @@ class IndexView extends React.Component {
     const proxies = Controller !== IndexView ? transformProxies(this.props.children) : {
 
     }
+
 
     return (
       <span>
@@ -118,7 +120,7 @@ class IndexView extends React.Component {
               <div className="af-class-div-block-4">
                 <p className="af-class-subtitle af-class-footer-subtitle">The width of the content div is equal to the height of its parent section. The parent section is used as a trigger and controller for the horizontal scrolling of the content div. Having those two elements the same scrollable size makes the feeling of the scrolling natural. By shortening or enlarging the Scroll Trigger div, you can accelerate or decelerate the horizontal scrolling effect.</p>
               </div>
-              <div className="af-class-div-block-5"><img src="images/Asset-120.svg" alt className="af-class-image-2" /><img src="images/Webflow---✓-Horizontal-scrolling-with-Sticky-menu-2019-01-22-11-00-55.png" alt className="af-class-image-3" /></div>
+              <div className="af-class-div-block-5"><img src={require('../images/Asset-120.svg')} alt className="af-class-image-2" /><img src={require('../images/Webflow---✓-Horizontal-scrolling-with-Sticky-menu-2019-01-22-11-00-55.png')} alt className="af-class-image-3" /></div>
             </div>
             {/* [if lte IE 9]><![endif] */}
           </div>
